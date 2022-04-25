@@ -47,7 +47,7 @@ module.exports = {
         CloudFrontDefaultCertificate: true,
       },
 
-      // Comment: `${STACK_NAME}-app-distribution`,
+      Comment: 'Web application for simple secrets telegram bot',
     },
   },
 };
