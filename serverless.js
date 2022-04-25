@@ -85,10 +85,12 @@ const {
 
 // S3 sync Configuration
 (() => {
-  const config = setIfNotExists(module.exports, 'custom.s3Sync', {}).custom.s3Sync;
+  const config = setIfNotExists(module.exports, 'custom.s3Sync', []).custom.s3Sync;
 
-  config.bucketName = `${STACK_NAME}-app-bucket`;
-  config.localDir   = 'web-application/dist';
+  config.push({
+    bucketName: `${STACK_NAME}-app-bucket`,
+    localDir:   'web-application/dist',
+  });
 
   consoleTableObject('⚡ Serverless S3 sync Configuration:', config);
 })();
